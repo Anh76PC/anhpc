@@ -36,7 +36,7 @@ login(credential, (err, api) => {
 				if (message.body && !answeredThreads.hasOwnProperty(message.threadID)) {
 	
 					answeredThreads[message.threadID] = true;
-					api.sendMessage("Tôi đang offline `bot` sẽ nói chuyện với bạn khi bạn gõ 'onbot'.", message.threadID);
+					api.sendMessage('Tôi đang offline bot sẽ nói chuyện với bạn khi bạn gõ "onbot".', message.threadID);
 				}
 				else if (message.body == "onbot" || message.body == "Onbot") {
 					botStatusThreads[message.threadID] = true;
