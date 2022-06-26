@@ -21,12 +21,6 @@ let gapi, active, rl;
 useSimsimi = function (threadID, text, api) {
     (async () => {
         try {
-            // if (blockGroupChat(threadID)) {
-            //     return;
-            // };
-            // if (blockUserChat(threadID)) {
-            //     return;
-            // };
             const response = await simsimi(text);
             api.sendMessage(response , threadID);
         } catch {
@@ -37,7 +31,7 @@ useSimsimi = function (threadID, text, api) {
 login(credential, (err, api) => {
 	if(err) return console.error(err)
 		api.listenMqtt(function callback(err, message) {
-			//if(message.body && message.threadID != 5510848958945307) //chặn gr ở đây
+			//if(message.body && message.threadID != id && message.threadID != id) //chặn group hoặc ai đó ở đây
 			{
 				if (message.body && !answeredThreads.hasOwnProperty(message.threadID)) {
 	
